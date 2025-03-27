@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .chat-container {
+            width: 50%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #mic-btn {
+            background: red;
+        }
+        #mic-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chatbot Interface</h1>
+    <div class="chat-container">
+        <textarea id="user_input" rows="2" placeholder="Ask me something..."></textarea>
+        <div class="btn-container">
+            <button onclick="sendMessage()">Send</button>
+            <button id="mic-btn" onclick="startSpeechRecognition()">🎤</button>
+        </div>
+        <textarea id="response" rows="4" placeholder="Bot response will appear here..." readonly></textarea>
+    </div>
+
+    <script>
+        function sendMessage() {
+            let message = document.getElementById("user_input").value.trim();
+            if (!message) return;  // Ignore empty messages
+            
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("response").value = data.response;
+                speak(data.response);  // Speak the bot response
+            });
+        }
+
+        function startSpeechRecognition() {
+            let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = "en-US";
+            recognition.start();
+            recognition.onresult = function(event) {
+                let transcript = event.results[0][0].transcript;
+                document.getElementById("user_input").value = transcript;
+                sendMessage();  // Auto-send message after speech input
+            };
+        }
+
+        function speak(text) {
+            let speech = new SpeechSynthesisUtterance(text);
+            speech.rate = 1;
+            speech.pitch = 1;
+            speech.volume = 1;
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+
+</body>
+</html>

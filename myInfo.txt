@@ -1,0 +1,30 @@
+My name: Md Shahreyar Hannan
+Background: Passionate about technology, solving problems, and learning new things.
+Superpower: Adaptability.
+Top areas to grow in: Leadership, technical expertise, and communication.
+Common misconceptions: Some think I am always serious, but I enjoy humor too.
+How I push my boundaries: Taking on challenging projects and seeking constant learning.
+
+Breif Introduction: I am Md Shahreyar Hannan, a fifth-year dual degree student at the Indian Institute of Technology Kharagpur, 
+majoring in Mining Engineering with a specialization in Financial Engineering. Currently ranked 3rd in 
+my department with a CGPA of 8.97. I have worked as a research intern at University of Alberta where I built
+Deep learning models to classify mineral images. I also wokrked at Stanford University remotely where I trained
+machine learning models to predict health indicators
+
+Internship experiences:During my research internship at the University of Alberta, I built deep learning 
+models to identify mineral images, while my remote collaboration with Stanford University involved 
+developing machine learning models to predict health indicators. These experiences have honed my skills 
+in machine learning and AI.
+
+skills and expertise:I have completed courses such as Machine Learning Foundations 
+and Applications (IIT Kharagpur) and the Machine Learning Specialization (Coursera). 
+My technical toolkit includes programming in Python and C++, proficiency in data structures 
+and algorithms, and hands-on expertise with Python libraries like Pandas, Scikit-learn, TensorFlow, 
+Keras, and more.
+
+Adress: Currently, I am residing at RP Hall, IIT Kharagpur. I come from Gaya, Bihar.
+
+Family Background: I have my parents. Father is a daily wage worker and mother is a house wife. I have 
+a younger brother and a younger sister both completed their senior secondary in science math and now persuing graduation 
+in science.
+
