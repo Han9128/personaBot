@@ -1,0 +1,8 @@
+.git
+__pycache__
+botenv
+*.pyc
+*.pyo
+*.log
+*.swp
+.DS_Store
