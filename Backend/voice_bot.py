@@ -1,10 +1,11 @@
 import os
 from openai import OpenAI
 import speech_recognition as sr
-import pyttsx3
+from gtts import gTTS  # Importing gTTS for text-to-speech
 import time
 from dotenv import load_dotenv
-import os
+import io
+import pygame  # To play the audio directly from memory
 
 # -----------------------------
 # CONFIGURATION
@@ -26,10 +27,6 @@ def load_personal_info(filename="myInfo.txt"):
 
 # Load personal info
 personal_info = load_personal_info()
-# print("Loaded personal info:", personal_info)
-# Initialize text-to-speech engine
-engine = pyttsx3.init()
-engine.setProperty("rate", 150)  # Adjust speaking speed
 
 # -----------------------------
 # FUNCTION TO CALL OpenRouter API
@@ -43,6 +40,9 @@ def ask_llm(question: str) -> str:
             "tell me about yourself",
             "introduce yourself"
         ]
+        
+        # Define greetings
+        greetings = ["hi", "hello", "hey", "greetings", "good morning", "good evening"]
 
         # Check if the question requires self-introduction
         if any(q in question.lower() for q in introduction_questions):
@@ -52,6 +52,8 @@ def ask_llm(question: str) -> str:
                 
                 {personal_info}
             """
+        elif any(greet in question.lower() for greet in greetings):
+            return "Hello! How can I help you today?"  # Respond with a greeting
         else:
             system_message = f"""
                 Answer concisely using the following information when relevant:
@@ -59,17 +61,24 @@ def ask_llm(question: str) -> str:
                 {personal_info}
             """
 
-        response = client.chat.completions.create(
-            model="mistralai/mistral-small-3.1-24b-instruct:free",
-            messages=[
-                {"role": "system", "content": system_message},
-                {"role": "user", "content": question},
-            ],
-            stream=False
-        )
-        return response.choices[0].message.content
+            response = client.chat.completions.create(
+                model="mistralai/mistral-small-3.1-24b-instruct:free",
+                messages=[ 
+                    {"role": "system", "content": system_message},
+                    {"role": "user", "content": question},
+                ],
+                stream=False
+            )
+            answer = response.choices[0].message.content
+            
+            # If the response is empty, return a default message
+            if not answer:
+                return "Sorry, I couldn't provide an answer. Please try again."
+
+            return answer
     except Exception as e:
         return f"An error occurred while connecting to the API: {e}"
+
 
 
 # -----------------------------
@@ -94,11 +103,25 @@ def listen_for_question() -> str:
         return ""
 
 # -----------------------------
-# SPEECH SYNTHESIS FUNCTION
+# SPEECH SYNTHESIS FUNCTION USING gTTS
 # -----------------------------
-def speak_text(text: str):
-    engine.say(text)
-    engine.runAndWait()
+def speak_text(text: str, lang='en'):
+    if not text:
+        print("No text to speak. Exiting.")
+        return  # Exit if there's no text to speak
+    
+    tts = gTTS(text=text, lang=lang, slow=False)  # Convert text to speech
+    fp = io.BytesIO()
+    tts.write_to_fp(fp)  # Write the speech to the byte stream instead of saving to a file
+    fp.seek(0)
+
+    # Initialize pygame mixer to play the byte stream directly
+    pygame.mixer.init()
+    pygame.mixer.music.load(fp, 'mp3')
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy():
+        time.sleep(0.1)
+
 
 # -----------------------------
 # MAIN LOOP
@@ -112,6 +135,9 @@ def main():
         if question in ["exit", "quit", "goodbye"]:
             speak_text("Goodbye!")
             break
+        elif any(greeting in question for greeting in ["hi", "hello", "hey", "greetings"]):
+            speak_text("Hello! How can I help you today?", lang='en')
+            continue  # Skip processing the rest of the question
 
         answer = ask_llm(question)
         print("Answer:", answer)
