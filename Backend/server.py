@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 from dotenv import load_dotenv
 import os
-from voice_bot import ask_llm  # Import your existing function
+from .voice_bot import ask_llm  # Import your existing function
 
 # Initialize Flask app
 app = Flask(__name__)
