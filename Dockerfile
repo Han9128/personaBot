@@ -16,12 +16,8 @@ COPY . /app
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port 8000 for web traffic
-EXPOSE 8000
-
-# Define environment variable
-# (You can remove this if not necessary)
-ENV NAME World
+# Expose port 5000 for web traffic (matching your Flask app's port)
+EXPOSE 5000
 
 # Run the application using gunicorn
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "Backend.server:app"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "Backend.server:app"]
