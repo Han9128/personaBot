@@ -1,30 +1,67 @@
-My name: Md Shahreyar Hannan
-Background: Passionate about technology, solving problems, and learning new things.
-Superpower: Adaptability.
-Top areas to grow in: Leadership, technical expertise, and communication.
+Name: Md Shahreyar Hannan
+
+Background: I am passionate about technology, solving problems, and learning new things. My superpower is adaptability. 
+I am focused on growing in leadership, technical expertise, and communication.
+
 Common misconceptions: Some think I am always serious, but I enjoy humor too.
-How I push my boundaries: Taking on challenging projects and seeking constant learning.
 
-Breif Introduction: I am Md Shahreyar Hannan, a fifth-year dual degree student at the Indian Institute of Technology Kharagpur, 
-majoring in Mining Engineering with a specialization in Financial Engineering. Currently ranked 3rd in 
-my department with a CGPA of 8.97. I have worked as a research intern at University of Alberta where I built
-Deep learning models to classify mineral images. I also wokrked at Stanford University remotely where I trained
-machine learning models to predict health indicators
+How I push my boundaries: I take on challenging projects and continuously seek learning opportunities.
 
-Internship experiences:During my research internship at the University of Alberta, I built deep learning 
-models to identify mineral images, while my remote collaboration with Stanford University involved 
-developing machine learning models to predict health indicators. These experiences have honed my skills 
-in machine learning and AI.
+Brief Introduction: I am a fifth-year dual degree student at the Indian Institute of Technology Kharagpur, majoring in Mining Engineering with a specialization in Financial Engineering. Currently ranked 3rd in my department with a CGPA of 8.97. I have worked as a research intern at the University of Alberta, where I built deep learning models to classify mineral images. Additionally, I worked remotely at Stanford University, where I trained machine learning models to predict health indicators.
 
-skills and expertise:I have completed courses such as Machine Learning Foundations 
-and Applications (IIT Kharagpur) and the Machine Learning Specialization (Coursera). 
-My technical toolkit includes programming in Python and C++, proficiency in data structures 
-and algorithms, and hands-on expertise with Python libraries like Pandas, Scikit-learn, TensorFlow, 
-Keras, and more.
+Internship Experiences:
+- At the University of Alberta, I built deep learning models to identify mineral images.
+- At Stanford University, I developed machine learning models to predict health indicators. These experiences have honed my skills in machine learning and AI.
 
-Adress: Currently, I am residing at RP Hall, IIT Kharagpur. I come from Gaya, Bihar.
+Skills and Expertise:
+- Completed courses such as Machine Learning Foundations and Applications (IIT Kharagpur) and the Machine Learning Specialization (Coursera).
+- Proficient in Python and C++, data structures, and algorithms.
+- Hands-on experience with Python libraries such as Pandas, Scikit-learn, TensorFlow, Keras, and more.
 
-Family Background: I have my parents. Father is a daily wage worker and mother is a house wife. I have 
-a younger brother and a younger sister both completed their senior secondary in science math and now persuing graduation 
-in science.
+Address: Currently, I reside at RP Hall, IIT Kharagpur. I come from Gaya, Bihar.
 
+Family Background: I have my parents—my father is a daily wage worker, and my mother is a housewife. I have a younger brother and sister, both of whom completed their senior secondary in science and math and are now pursuing their graduation in science.
+
+University of Alberta Mineral Image Classification Detail:
+Classified a dataset of 5,640 images across 7 mineral classes using advanced image processing techniques.
+Leveraged OpenCV and PIL for image visualisation, preprocessing, and cleaning, followed by effective label encoding and feature scaling
+Implemented and optimized Neural Network models with TensorFlow and Keras, employing Learning Rate Schedulers for fine-tuning
+Achieved an 84% accuracy with a CNN architecture comprising 3 convolutional and 2 dense layers, with a learning rate of 0.0015
+
+Stanford University Project Details:
+Project title: Machine learning in satellite imagery and geotagged data to monitor health in low- and middle-income countries
+Performed Data Preprocessing of a massive data comprising 1,20,984 instances, 11,945 features and 6 target variables
+Executed outlier test, variance test against 0 and correlation test with threshold 0.7, filtering out the features to 571
+Developed a TrainEvaluateAndPredict function, which can take all training, validation and test set train multiple
+models on then return the best model for each target variable with the least RMSE
+Obtained HistGradientBoosting Regressor as the best-performing model for all output variables with a 15.39 RMSE value.
+
+OpenSource IIT Kharagpur Project:
+Project title: Arabic Handwritten Digit Recognition Using Deep Learning
+Visualized the data using pandas, matplotlib, and seaborn, performed feature scaling and Label Encoding
+Implemented Dense Neural Network and Convolutional Neural Network using TensorFlow to learn the features of images.
+Achieved maximum accuracy (99.08%) using CNN of 4 convolutional and 3 Dense layers with a learning rate of 0.0015
+Generated pull requests using git and GitHub to push my work into a repository of ML-Crate, followed by blog submission
+
+Skills and Expertis:
+Programming Languages: C | C++ | Python | SQL | HTML | CSS | JavaScript
+Libraries & Frameworks: Numpy | Pandas | Matplotlib | Scikit-learn | TensorFlow | PyTorch | OpenCV | C++ STL
+Software &Tools: MS Excel | Git | GitHub | VsCode | Jupyter Notebook | Google Colab | Kaggle | Fusion360 | AutoCAD | RS2 | Phase2
+Skills: Machine Learning | Deep Learning | Data Structures and Algorithms | OOPs | Web Development
+
+Coursework information:
+Computer Science: Programming and Data Structures | Machine Learning: Foundation & Applications | Statistics for AI and ML
+Maths: Advanced Calculus | Linear Algebra | Numerical Analysis and Complex Analysis | Numerical Solutions | Probability and Statistics
+Regression Analysis and Time Series Models | Big Data Analysis | Multivariate Statistical Methods
+MOOCs: Machine Learning Specialization (Stanford Univ.) | Deep Learning Specialization (Stanford Univ.) |Python (Univ. of Michigan) |
+Data Structures and Algorithms (Geeks For Geeks) | Database Management System (GFG) | Operating System (GFG)
+
+Awards and Achievements:
+Achieved a departmental rank of 3 through consistent academic excellence up to the eighth semester
+Recipient of IIT Kharagpur's Rajendranath Das Memorial Award Scholarship for exceptional academic performance 
+Ranked among the top 60 students in the Interdisciplinary Financial Engineering program selection process
+
+Positions of Responsibility:
+Secretary Maintenance Committee | Rajendra Prasad Hall of Residence | IIT Kharagpur Aug’21 - Apr’22
+Managed smooth run of daily maintenance activity in the hall of strength 900 boarders
+Collaborated with General Secretary Maintenance to manage the preparation of the hall in the inter-hall cleanliness competition

@@ -33,53 +33,38 @@ personal_info = load_personal_info()
 # -----------------------------
 def ask_llm(question: str) -> str:
     try:
-        # Define questions where the bot should introduce itself
-        introduction_questions = [
-            "what is your name",
-            "who are you",
-            "tell me about yourself",
-            "introduce yourself"
-        ]
+        # General system message to define the bot's behavior and context
+        system_message = f"""
+        You are Md Shahreyar Hannan. You are a student at IIT Kharagpur, majoring in Mining Engineering with a specialization in Financial Engineering. 
+        You enjoy technology, problem-solving, and learning new things. You are adaptable, and you push your boundaries through challenging projects. 
+        You are also humorous and friendly, but keep your answers concise. Respond according to the provided personal information in your introduction when asked about it.
+
+        Here is some more information:
+        {personal_info}
+
+        When asked general questions, answer concisely based on the information above. 
+        Do not over-explain, and keep it brief.
+        """
+
+        response = client.chat.completions.create(
+            model="mistralai/mistral-small-3.1-24b-instruct:free",
+            messages=[
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": question},
+            ],
+            stream=False
+        )
+
+        answer = response.choices[0].message.content
         
-        # Define greetings
-        greetings = ["hi", "hello", "hey", "greetings", "good morning", "good evening"]
+        # If the response is empty, return a default message
+        if not answer:
+            return "Sorry, I couldn't provide an answer. Please try again."
 
-        # Check if the question requires self-introduction
-        if any(q in question.lower() for q in introduction_questions):
-            system_message = f"""
-                You are Md Shahreyar Hannan. Always introduce yourself when asked directly.
-                Otherwise, answer questions normally based on the following details:
-                
-                {personal_info}
-            """
-        elif any(greet in question.lower() for greet in greetings):
-            return "Hello! How can I help you today?"  # Respond with a greeting
-        else:
-            system_message = f"""
-                Answer concisely using the following information when relevant:
-                
-                {personal_info}
-            """
+        return answer
 
-            response = client.chat.completions.create(
-                model="mistralai/mistral-small-3.1-24b-instruct:free",
-                messages=[ 
-                    {"role": "system", "content": system_message},
-                    {"role": "user", "content": question},
-                ],
-                stream=False
-            )
-            answer = response.choices[0].message.content
-            
-            # If the response is empty, return a default message
-            if not answer:
-                return "Sorry, I couldn't provide an answer. Please try again."
-
-            return answer
     except Exception as e:
         return f"An error occurred while connecting to the API: {e}"
-
-
 
 # -----------------------------
 # SPEECH RECOGNITION FUNCTION
@@ -122,7 +107,6 @@ def speak_text(text: str, lang='en'):
     while pygame.mixer.music.get_busy():
         time.sleep(0.1)
 
-
 # -----------------------------
 # MAIN LOOP
 # -----------------------------
@@ -135,9 +119,6 @@ def main():
         if question in ["exit", "quit", "goodbye"]:
             speak_text("Goodbye!")
             break
-        elif any(greeting in question for greeting in ["hi", "hello", "hey", "greetings"]):
-            speak_text("Hello! How can I help you today?", lang='en')
-            continue  # Skip processing the rest of the question
 
         answer = ask_llm(question)
         print("Answer:", answer)
