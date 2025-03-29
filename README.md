@@ -63,6 +63,32 @@ To deploy this bot on Render:
 ## Live Demo
 Try it here: [Voice Bot](https://voice-bot-2-vx9e.onrender.com/).
 
+## Technologies Used  
+This project was built using the following technologies:  
+- **Flask** – Python web framework for handling backend logic  
+- **JavaScript** – Handles frontend interactions  
+- **HTML & CSS** – UI design and styling  
+- **Mistral AI API** – AI model powering chatbot responses  
+
+## Contributing  
+Contributions are welcome! If you'd like to improve this project:  
+1. Fork the repository  
+2. Create a new branch (`git checkout -b feature-branch`)  
+3. Commit your changes (`git commit -m "Add feature"`)  
+4. Push the branch (`git push origin feature-branch`)  
+5. Open a pull request  
+
+For major changes, please open an issue first to discuss your proposal.  
+
+## License  
+This project is licensed under the **MIT License** – you are free to use, modify, and distribute it. See the `LICENSE` file for more details.  
+
+## Contact  
+For any queries or collaboration opportunities, feel free to reach out:  
+📧 **Email:** mdshahreyarhannan@gmail.com  
+🔗 **GitHub:** [Han9128](https://github.com/Han9128)  
+
+
 
 
 
