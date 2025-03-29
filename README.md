@@ -81,7 +81,17 @@ Contributions are welcome! If you'd like to improve this project:
 For major changes, please open an issue first to discuss your proposal.  
 
 ## License  
-This project is licensed under the **MIT License** – you are free to use, modify, and distribute it. See the `LICENSE` file for more details.  
+This project is licensed under two options:
+
+1. **Open Source License (MIT)** – Free for personal and non-commercial use.
+2. **Commercial License** – Required for commercial use.
+
+Commercial use, including but not limited to selling, licensing, or distributing this software as part of a paid product/service, **is strictly prohibited without explicit permission** from the author.
+
+See the [LICENSE](LICENSE) file for more details.
+
+For commercial licensing inquiries, contact mdshahreyarhannan@gmail.com.
+ 
 
 ## Contact  
 For any queries or collaboration opportunities, feel free to reach out:  
