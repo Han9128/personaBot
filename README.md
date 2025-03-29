@@ -13,25 +13,25 @@ A simple voice-enabled chatbot using Openrouter Mistral AI API. Users can intera
 - A Mistral AI API key
 
 ## Installation
-`1.` **Clone the repository:** 
+### 1. Clone the repository:
    ```bash
    git clone https://github.com/Han9128/Voice-bot.git
    cd Voice-bot
    ```
-`2.` **Create and activate actual environment:**
+### 2. Create and activate actual environment:
     ```bash
     python -m venv botenv`
     source botenv/bin/activate`  # On macOS/Linux
     botenv\Scripts\activate `    # On Windows
     ```
-`3.` **Install dependencies:**
+### 3.Install dependencies:
 `pip install -r requirements.txt`
 
-`4.` **Set up environment variables:**
+### 4.Set up environment variables:
     - Create a `.env` file in the root directory.
     - Add your Mistral AI API key inside:
     `API_KEY=your_deepseek_api_key`
-`5.` **Run the application:**
+### 5. Run the application:
 `python -m Backend.server`
 
 
