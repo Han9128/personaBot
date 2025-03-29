@@ -20,9 +20,9 @@ A simple voice-enabled chatbot using Openrouter Mistral AI API. Users can intera
    ```
 ### 2. Create and activate actual environment:
     ```bash
-    python -m venv botenv`
-    source botenv/bin/activate`  # On macOS/Linux
-    botenv\Scripts\activate `    # On Windows
+    python -m venv botenv
+    source botenv/bin/activate  # On macOS/Linux
+    botenv\Scripts\activate    # On Windows
     ```
 ### 3.Install dependencies:
 ```bash
