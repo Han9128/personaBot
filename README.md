@@ -61,7 +61,7 @@ To deploy this bot on Render:
 6. Deploy and test your bot.
 
 ## Live Demo
-Try it here: [Voice Bot](https://voice-bot-2-vx9e.onrender.com/).
+Try it here: [personaBot](https://voice-bot-2-vx9e.onrender.com/).
 
 ## Technologies Used  
 This project was built using the following technologies:  
