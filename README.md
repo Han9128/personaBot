@@ -1,4 +1,4 @@
-# Voice Bot
+# personaBot
 A simple voice-enabled chatbot using Openrouter Mistral AI API. Users can interact via text or voice, and the bot will generate responses as I would be responding to if some one ask about me otherwise it will give general response.
 
 ## Features
