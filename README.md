@@ -52,11 +52,11 @@ python -m Backend.server
 4. You can also type queries manually in the text box.
 5. Customize responses by updating `myInfo.txt`
 ## Customization
-If you want to personalize this bot to respond as per your own persona, update the myInfo.txt file with relevant details. The bot will prioritize your custom information when generating responses.
+If you want to personalize this bot to respond as per your own persona, update the `myInfo.txt` file with relevant details. The bot will prioritize your custom information when generating responses.
 
 Steps to customize:
 
-1. Open myInfo.txt in the project folder.
+1. Open `myInfo.txt` in the project folder.
 
 2. Add details about yourself, such as name, interests, profession, or other relevant information.
 
